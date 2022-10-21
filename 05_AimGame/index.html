@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Aim Training | Проект 5</title>
+  </head>
+  <body>
+    <!-- Intro -->
+    <div class="screen up">
+      <h1>Игра для <br> Катюши Суетолога</h1>
+      <a href="#" class="start" id="start">Начать игру</a>
+    </div>
+
+    <!-- Menu <Select time> -->
+    <div class="screen">
+      <h1>Выбери время, Катюша</h1>
+      <ul class="time-list" id="time-list">
+        <li>
+          <button class="time-btn" data-time="10">
+            10 сек
+          </button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="20">
+            20 сек
+          </button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="30">
+            30 сек
+          </button>
+        </li>
+        <li>
+          <button class="time-btn" data-time="60">
+            60 сек
+          </button>
+        </li>
+        <li>
+          <button class="backBtn" id="backBtn">
+            Back
+          </button>
+        </li>
+      </ul>
+    </div>
+
+    <!-- The Game -->
+    <div class="screen">
+      <h3>Осталось <span id="time">00:00</span></h3>
+      <div class="board" id="board">
+        <div id="result">
+          <h2>Ваш счёт: 
+            <span class="primary" id="resultScore">
+            
+            </span> 
+          </h2>
+        </div>
+      </div>
+      <div>
+        <ul class="gameOver-list">
+            <li>
+              <button class="backBtn" id="resetBtn">
+              Reset
+              </button>
+            </li> 
+            <li>
+              <button class="backBtn" id="backBtn2">
+              Back
+              </button>
+            </li> 
+        </ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
