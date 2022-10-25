@@ -8,7 +8,7 @@
   </head>
   <body>
     <!-- Intro -->
-    <div class="screen">
+    <div class="screen up">
       <h1>Игра для <br> Катюши Суетолога</h1>
       <a href="#" class="start" id="start">Начать игру</a>
     </div>
@@ -18,7 +18,7 @@
       <h1>Выбери время, Катюша</h1>
       <ul class="time-list" id="time-list">
         <li>
-          <button class="time-btn" data-time="10">
+          <button class="time-btn" data-time="2">
             10 сек
           </button>
         </li>
@@ -48,7 +48,15 @@
     <!-- The Game -->
     <div class="screen">
       <h3>Осталось <span id="time">00:00</span></h3>
-      <div class="board" id="board">
+      <div class="board" id="board"></div>
+      <div>
+        <ul class="time-list">
+          <li>
+            <button class="backBtn" id="resetBtn">
+              Reset
+            </button>
+          </li>
+        </ul>
       </div>
     </div>
 

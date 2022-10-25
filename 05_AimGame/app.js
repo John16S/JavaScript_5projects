@@ -1,15 +1,12 @@
 const startBtn = document.querySelector("#start");  // "кнопка" начало
 const screens = document.querySelectorAll(".screen"); // каждое "окно"
 const backBtn = document.querySelector("#backBtn"); // "кнопка" назад во втором "окне"
-const backBtn2 = document.querySelector("#backBtn2"); // "кнопка" назад во втором "окне"
 const timeList = document.querySelector("#time-list");  // список времеён для выбора на третьем "окне"
 const timeLeft = document.querySelector("#time"); // время для "секундомера" на третьем "окне"
 const board = document.querySelector('#board')  //поле для игры
-const resultScore = document.getElementById('resultScore')
-
 
 let time = 0;  // для "секундомера"
-let score
+let score = 0
 
 startBtn.addEventListener("click", (event) => 
 {
@@ -22,29 +19,17 @@ backBtn.addEventListener("click", () =>
   screens[0].classList.remove("up");
 });
 
-backBtn2.addEventListener("click", () => 
-{
-  screens[1].classList.remove("up");
-  score = 0
-  const result = document.querySelector('#result')
-  result.classList.add('hide')
-  //console.log(result)
-  finishGame()
-});
-
 timeList.addEventListener("click", (event) => {
   if (event.target.classList.contains("time-btn")) // если у объекта есть класс "time-btn"
   {
     time = parseInt(event.target.getAttribute("data-time"));  // у этого объекта берём значение аттрибута data-time 
     screens[1].classList.add("up");
-    timeLeft.classList.remove('hide')
     startGame();
   }
 });
 
 board.addEventListener('click', event => 
 {
-    score = 0
     if (event.target.classList.contains('circle'))  //если в board есть элемент с классом circle...
     {
         score++ 
@@ -79,7 +64,25 @@ function setTime(value) {
 }
 
 function finishGame(){
-    //board.innerHTML = 
+    board.innerHTML = `<div><h2>Ваш счёт: <span class="primary">${score}</span> </h2></div>`
+    // <div>
+    //   <ul class="time-list">
+    //       <li>
+    //         <button class="backBtn" id="resetBtn">
+    //         Reset
+    //         </button>
+    //       </li> 
+    //       <li>
+    //         <button class="backBtn" id="backBtn">
+    //         Back
+    //         </button>
+    //       </li> 
+    //   </ul>
+    // </div>`
+    // const reset = document.querySelector('#resetBtn')
+    // reset.addEventListener('click', () => {
+    //   startGame()
+    // })
     timeLeft.parentNode.classList.add('hide') //  Родителью элемента timeLeft добавляем класс hide 
 }
 

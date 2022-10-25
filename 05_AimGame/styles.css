@@ -59,18 +59,6 @@ h1 {
   margin: 10px;
 }
 
-.gameOver-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-}
-
-.gameOver-list li {
-  margin: 10px;
-}
-
 .time-btn {
   background-color: transparent;
   border: 2px solid #c0c0c0;

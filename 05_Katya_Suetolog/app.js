@@ -4,6 +4,10 @@ const backBtn = document.querySelector("#backBtn"); // "кнопка" назад
 const timeList = document.querySelector("#time-list");  // список времеён для выбора на третьем "окне"
 const timeLeft = document.querySelector("#time"); // время для "секундомера" на третьем "окне"
 const board = document.querySelector('#board')  //поле для игры
+var resultScore = document.getElementById('resultScore')
+const result = document.querySelector('#result')
+const resetBtn = document.getElementById('resetBtn')
+
 
 let time = 0;  // для "секундомера"
 let score = 0
@@ -18,6 +22,11 @@ backBtn.addEventListener("click", () =>
 {
   screens[0].classList.remove("up");
 });
+
+resetBtn.addEventListener("click", () => {
+    location.reload();
+    //screens[0].classList.add("up");
+})
 
 timeList.addEventListener("click", (event) => {
   if (event.target.classList.contains("time-btn")) // если у объекта есть класс "time-btn"
@@ -64,26 +73,18 @@ function setTime(value) {
 }
 
 function finishGame(){
-    board.innerHTML = `<div><h2>Ваш счёт: <span class="primary">${score}</span> </h2></div>`
-    // <div>
-    //   <ul class="time-list">
-    //       <li>
-    //         <button class="backBtn" id="resetBtn">
-    //         Reset
-    //         </button>
-    //       </li> 
-    //       <li>
-    //         <button class="backBtn" id="backBtn">
-    //         Back
-    //         </button>
-    //       </li> 
-    //   </ul>
-    // </div>`
-    // const reset = document.querySelector('#resetBtn')
-    // reset.addEventListener('click', () => {
-    //   startGame()
-    // })
+    board.innerHTML = 
+    `<div>
+        <h2>Ваш счёт: <span class="primary"> ${score} </span></h2>
+    </div>`
     timeLeft.parentNode.classList.add('hide') //  Родителью элемента timeLeft добавляем класс hide 
+
+    // let asd = "Hi!"
+    // if (typeof resultScore.innerHTML !== 'undefined'){
+    //     resultScore.innerText = score; 
+    // } else {
+    //     resultScore.innerText = score; 
+    // }
 }
 
 function createRandomCircle() {
